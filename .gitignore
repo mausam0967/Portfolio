@@ -1,0 +1,28 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build files
+dist/
+build/
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Cache
+__pycache__/
+*.pyc 
