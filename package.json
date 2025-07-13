@@ -1,0 +1,48 @@
+{
+  "name": "mausam-paudel-portfolio",
+  "version": "2.0.0",
+  "description": "Modern portfolio website for Mausam Paudel - Full Stack Developer",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
+    "format": "prettier --write src/**/*.{js,ts,jsx,tsx,css,html}",
+    "optimize-images": "node scripts/optimize-images.js",
+    "analyze": "vite-bundle-analyzer"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "fullstack",
+    "react",
+    "typescript",
+    "modern"
+  ],
+  "author": "Mausam Paudel",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/three": "^0.158.0",
+    "@vitejs/plugin-react": "^4.1.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vite-plugin-pwa": "^0.17.4"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.158.0",
+    "framer-motion": "^10.16.4",
+    "react-intersection-observer": "^9.5.2",
+    "react-helmet-async": "^1.3.0",
+    "lucide-react": "^0.292.0"
+  }
+} 
