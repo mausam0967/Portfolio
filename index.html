@@ -145,6 +145,88 @@
             width: 100%;
         }
 
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .theme-toggle:hover {
+            background: rgba(255, 107, 107, 0.2);
+            border-color: #ff6b6b;
+            transform: scale(1.1);
+        }
+        .theme-toggle i {
+            font-size: 1.2rem;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover i {
+            color: #ff6b6b;
+        }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
+            color: #111;
+            font-weight: 600;
+        }
+        body.light-mode nav {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        body.light-mode .nav-links a {
+            color: #181818;
+            font-weight: 700;
+        }
+        body.light-mode .hero-title,
+        body.light-mode .section-title,
+        body.light-mode .about-text h3,
+        body.light-mode .skill-card h4,
+        body.light-mode .project-info h3 {
+            color: #111;
+            font-weight: 800;
+        }
+        body.light-mode .hero-description,
+        body.light-mode .about-text,
+        body.light-mode .skill-card p,
+        body.light-mode .project-info p,
+        body.light-mode .contact-description {
+            color: #181818;
+            font-weight: 700;
+        }
+        body.light-mode .nav-links a:hover {
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14;
+        }
+        body.light-mode .section-title {
+            color: #39ff14;
+            text-shadow: 0 0 12px #39ff14, 0 0 32px #39ff14;
+        }
+        body.light-mode .theme-toggle {
+            background: rgba(57, 255, 20, 0.1);
+            border: 2px solid #39ff14;
+            box-shadow: 0 0 15px #39ff14;
+        }
+        body.light-mode .theme-toggle:hover {
+            background: rgba(57, 255, 20, 0.2);
+            border-color: #39ff14;
+            box-shadow: 0 0 25px #39ff14;
+        }
+        body.light-mode .theme-toggle i {
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14;
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -621,6 +703,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="theme-toggle">🌙</button>
         </div>
     </nav>
 
@@ -1037,6 +1120,23 @@
             if (particles) {
                 particles.position.y = -parallax * 0.1;
             }
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const isLightMode = localStorage.getItem('lightMode') === 'true';
+
+        if (isLightMode) {
+            body.classList.add('light-mode');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isNowLight = body.classList.contains('light-mode');
+            themeToggle.textContent = isNowLight ? '☀️' : '🌙';
+            localStorage.setItem('lightMode', isNowLight);
         });
     </script>
 </body>
